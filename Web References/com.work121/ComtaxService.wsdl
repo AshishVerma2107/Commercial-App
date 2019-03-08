@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://work121.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://work121.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://work121.com/">
+      <s:element name="GetImageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filetype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTDFData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="associateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associatepwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tdfjson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appdatetime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTDFDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTDFDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCredentials" type="tns:UserCredentials" />
+      <s:complexType name="UserCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetTDFData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="associateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associatepwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchkey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTDFDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTDFDataResult" type="tns:ArrayOfTDFData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTDFData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TDFData" nillable="true" type="tns:TDFData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDFData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TDFType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaserTin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerTin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChallanNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="geolocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TDFFiles" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileUnitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReverseGeoCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MainCommodity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMEI1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMEI2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMSI1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMSI2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="versionName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransitData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="associateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associatepwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchkey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransitDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransitDataResult" type="tns:ArrayOfTransitData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransitData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransitData" nillable="true" type="tns:TransitData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransitData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransitNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GenDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntryLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExitLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProminentLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescGood" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueGood" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGSTINData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="associateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associatepwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchkey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGSTINDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGSTINDataResult" type="tns:ArrayOfGSTINData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGSTINData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GSTINData" nillable="true" type="tns:GSTINData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GSTINData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PANCardNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompInd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SignInd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSTINID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AssignedTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateJursdCd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CntrJursdCd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegStartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LiabDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetGSTINCerification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="associateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="associatepwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gstinverfjson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGSTINCerificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetGSTINCerificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfTDFData" nillable="true" type="tns:ArrayOfTDFData" />
+      <s:element name="ArrayOfTransitData" nillable="true" type="tns:ArrayOfTransitData" />
+      <s:element name="ArrayOfGSTINData" nillable="true" type="tns:ArrayOfGSTINData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetImageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageData" />
+  </wsdl:message>
+  <wsdl:message name="GetImageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTDFDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTDFData" />
+  </wsdl:message>
+  <wsdl:message name="SetTDFDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTDFDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTDFDataUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetTDFDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTDFData" />
+  </wsdl:message>
+  <wsdl:message name="GetTDFDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTDFDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTDFDataUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransitData" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransitDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitDataUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetGSTINDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGSTINData" />
+  </wsdl:message>
+  <wsdl:message name="GetGSTINDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGSTINDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGSTINDataUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="SetGSTINCerificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGSTINCerification" />
+  </wsdl:message>
+  <wsdl:message name="SetGSTINCerificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGSTINCerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetGSTINCerificationUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetImageDataHttpGetIn">
+    <wsdl:part name="filetype" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetImageDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTDFDataHttpGetIn">
+    <wsdl:part name="associateID" type="s:string" />
+    <wsdl:part name="associatepwd" type="s:string" />
+    <wsdl:part name="licenceId" type="s:string" />
+    <wsdl:part name="tdfjson" type="s:string" />
+    <wsdl:part name="appdatetime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTDFDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTDFDataHttpGetIn">
+    <wsdl:part name="associateID" type="s:string" />
+    <wsdl:part name="associatepwd" type="s:string" />
+    <wsdl:part name="licenceId" type="s:string" />
+    <wsdl:part name="searchkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTDFDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTDFData" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitDataHttpGetIn">
+    <wsdl:part name="associateID" type="s:string" />
+    <wsdl:part name="associatepwd" type="s:string" />
+    <wsdl:part name="licenceId" type="s:string" />
+    <wsdl:part name="searchkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransitDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTransitData" />
+  </wsdl:message>
+  <wsdl:message name="GetGSTINDataHttpGetIn">
+    <wsdl:part name="associateID" type="s:string" />
+    <wsdl:part name="associatepwd" type="s:string" />
+    <wsdl:part name="licenceId" type="s:string" />
+    <wsdl:part name="searchkey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGSTINDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGSTINData" />
+  </wsdl:message>
+  <wsdl:message name="SetGSTINCerificationHttpGetIn">
+    <wsdl:part name="associateID" type="s:string" />
+    <wsdl:part name="associatepwd" type="s:string" />
+    <wsdl:part name="licenceId" type="s:string" />
+    <wsdl:part name="gstinverfjson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetGSTINCerificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ComTaxServiceSoap">
+    <wsdl:operation name="GetImageData">
+      <wsdl:input message="tns:GetImageDataSoapIn" />
+      <wsdl:output message="tns:GetImageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTDFData">
+      <wsdl:input message="tns:SetTDFDataSoapIn" />
+      <wsdl:output message="tns:SetTDFDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTDFData">
+      <wsdl:input message="tns:GetTDFDataSoapIn" />
+      <wsdl:output message="tns:GetTDFDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransitData">
+      <wsdl:input message="tns:GetTransitDataSoapIn" />
+      <wsdl:output message="tns:GetTransitDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGSTINData">
+      <wsdl:input message="tns:GetGSTINDataSoapIn" />
+      <wsdl:output message="tns:GetGSTINDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGSTINCerification">
+      <wsdl:input message="tns:SetGSTINCerificationSoapIn" />
+      <wsdl:output message="tns:SetGSTINCerificationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ComTaxServiceHttpGet">
+    <wsdl:operation name="GetImageData">
+      <wsdl:input message="tns:GetImageDataHttpGetIn" />
+      <wsdl:output message="tns:GetImageDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTDFData">
+      <wsdl:input message="tns:SetTDFDataHttpGetIn" />
+      <wsdl:output message="tns:SetTDFDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTDFData">
+      <wsdl:input message="tns:GetTDFDataHttpGetIn" />
+      <wsdl:output message="tns:GetTDFDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransitData">
+      <wsdl:input message="tns:GetTransitDataHttpGetIn" />
+      <wsdl:output message="tns:GetTransitDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGSTINData">
+      <wsdl:input message="tns:GetGSTINDataHttpGetIn" />
+      <wsdl:output message="tns:GetGSTINDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGSTINCerification">
+      <wsdl:input message="tns:SetGSTINCerificationHttpGetIn" />
+      <wsdl:output message="tns:SetGSTINCerificationHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ComTaxServiceSoap" type="tns:ComTaxServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetImageData">
+      <soap:operation soapAction="http://work121.com/GetImageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTDFData">
+      <soap:operation soapAction="http://work121.com/SetTDFData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetTDFDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTDFData">
+      <soap:operation soapAction="http://work121.com/GetTDFData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTDFDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransitData">
+      <soap:operation soapAction="http://work121.com/GetTransitData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTransitDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGSTINData">
+      <soap:operation soapAction="http://work121.com/GetGSTINData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGSTINDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGSTINCerification">
+      <soap:operation soapAction="http://work121.com/SetGSTINCerification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetGSTINCerificationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ComTaxServiceSoap12" type="tns:ComTaxServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetImageData">
+      <soap12:operation soapAction="http://work121.com/GetImageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTDFData">
+      <soap12:operation soapAction="http://work121.com/SetTDFData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetTDFDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTDFData">
+      <soap12:operation soapAction="http://work121.com/GetTDFData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTDFDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransitData">
+      <soap12:operation soapAction="http://work121.com/GetTransitData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTransitDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGSTINData">
+      <soap12:operation soapAction="http://work121.com/GetGSTINData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGSTINDataUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGSTINCerification">
+      <soap12:operation soapAction="http://work121.com/SetGSTINCerification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetGSTINCerificationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ComTaxServiceHttpGet" type="tns:ComTaxServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetImageData">
+      <http:operation location="/GetImageData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTDFData">
+      <http:operation location="/SetTDFData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTDFData">
+      <http:operation location="/GetTDFData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransitData">
+      <http:operation location="/GetTransitData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGSTINData">
+      <http:operation location="/GetGSTINData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGSTINCerification">
+      <http:operation location="/SetGSTINCerification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComTaxService">
+    <wsdl:port name="ComTaxServiceSoap" binding="tns:ComTaxServiceSoap">
+      <soap:address location="http://work121.com/webservice/ComtaxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ComTaxServiceSoap12" binding="tns:ComTaxServiceSoap12">
+      <soap12:address location="http://work121.com/webservice/ComtaxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ComTaxServiceHttpGet" binding="tns:ComTaxServiceHttpGet">
+      <http:address location="http://work121.com/webservice/ComtaxService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://work121.com/webservice/ComtaxService.asmx?wsdl" docRef="http://work121.com/webservice/ComtaxService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://work121.com/webservice/ComtaxService.asmx" xmlns:q1="http://work121.com/" binding="q1:ComTaxServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://work121.com/webservice/ComtaxService.asmx" xmlns:q2="http://work121.com/" binding="q2:ComTaxServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
