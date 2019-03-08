@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	 <android.support.design.widget.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/searchPreviousGSTN"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:textSize="20dp"
+                           android:textStyle="normal"
+                           android:maxLength="15"
+			               android:padding="5dp"
+			               android:hint="Enter Previous GSTIN"
+		                   android:drawableRight="@drawable/search"/>
+                   </android.support.design.widget.TextInputLayout>
+
+	<ListView android:id="@+id/previousGSTNList"
+		      android:layout_width="match_parent"
+              android:layout_height="match_parent"
+		      android:layout_marginTop="5dp"/>
+
+</LinearLayout>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="GSTN Verification"
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_below="@+id/layout12"
+        android:layout_marginBottom="10dp"
+        android:background="#000000" />
+
+	 <android.support.design.widget.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/searchGSTN"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:textSize="25dp"
+                           android:textStyle="normal"
+                           android:maxLength="15"
+			android:padding="5dp"
+			android:hint="Enter GSTIN"
+		android:drawableRight="@drawable/search"/>
+                   </android.support.design.widget.TextInputLayout>
+   
+
+    <ProgressBar
+        android:id="@+id/progressGST"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tradeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/gstnId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/regDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18dp" />
+
+
+            <TextView
+                android:id="@+id/mobileNumberVer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="18dp"
+			    android:textStyle="bold"/>
+
+
+            <LinearLayout
+                android:id="@+id/gridVer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content2"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <GridView
+                    android:id="@+id/gridViewVer"
+                    style="@style/grid_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:listSelector="@color/blue"
+                    android:numColumns="4"
+                    android:padding="3dp">
+
+                </GridView>
+
+                <ImageButton
+                    android:id="@+id/cameraVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@null"
+                    android:src="@drawable/add_a_photo" />
+            </LinearLayout>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	    android:id="@+id/linearQuestion1"	
+        android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_weight="0.5"
+            android:includeFontPadding="false"
+            android:text="Address was found to be correct."
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/myRadioGroup1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/no1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="No" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+		android:id="@+id/linearQuestion2"
+		android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_weight="0.5"
+            android:includeFontPadding="false"
+            android:text="Business activity was found."
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/myRadioGroup2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/no2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="No" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+			<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+		android:id="@+id/linearQuestion3"
+		android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/question3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_weight="0.5"
+            android:includeFontPadding="false"
+            android:text="Business premises were in accordance with registration applied for."
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/myRadioGroup3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/no3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="No" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+		
+
+			<android.support.design.widget.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+				       android:layout_marginTop="10dp">
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/otherText1"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:hint="Other"/>
+                   </android.support.design.widget.TextInputLayout>
+
+
+            <CheckBox
+                android:id="@+id/checkVerification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:text="Opted for compounding but not eligible for compounding."
+                android:textSize="18dp" />
+
+			<android.support.design.widget.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+				       android:layout_marginTop="10dp">
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/area1"
+					       android:inputType="number"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:hint="Area of Business Place (Sq.Ft.)"/>
+                   </android.support.design.widget.TextInputLayout>
+
+			<Button  android:id="@+id/mySelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+			android:text="Select Business"
+			android:textColor="#ffffff"
+            android:background="@drawable/rounded_button"
+			android:layout_marginTop="10dp"/>
+
+
+			 <LinearLayout
+            android:id="@+id/myRadioGroup4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+			android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/manufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Manufacturer" />
+
+            <CheckBox
+                android:id="@+id/trader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Trader" />
+				  <CheckBox
+                android:id="@+id/serviceDealer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Service Dealer" />
+        </LinearLayout>
+
+	<android.support.design.widget.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+				       android:layout_marginTop="10dp">
+                       <android.support.design.widget.TextInputEditText
+                           android:id="@+id/turnOver"
+					       android:inputType="number"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:hint="Annual Turnover of the Unit (Rs.)"/>
+                   </android.support.design.widget.TextInputLayout>
+				
+
+            <Button
+                android:id="@+id/submitVerification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+				android:textColor="#ffffff"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/rounded_button"
+                android:text="Submit Verification Data" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
