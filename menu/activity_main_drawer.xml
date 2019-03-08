@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!--<group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_challan"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Challan" />
+        <item
+            android:id="@+id/nav_purchase"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Purchase Invoice" />
+        <item
+            android:id="@+id/nav_sale"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sale Invoice" />
+        <item
+            android:id="@+id/nav_tax"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tax Invoice" />
+    </group>-->
+
+    <item android:title="GSTN Verification">
+        <menu>
+            <item
+                android:id="@+id/nav_verification"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Verification" />
+
+          <!--<item
+               android:id="@+id/nav_verification"
+               android:icon="@drawable/ic_menu_share"
+               android:title="Previous Verifications" />
+
+          <item
+               android:id="@+id/nav_verification"
+               android:icon="@drawable/ic_menu_share"
+               android:title="Report" />-->
+        </menu>
+    </item>
+
+</menu>
